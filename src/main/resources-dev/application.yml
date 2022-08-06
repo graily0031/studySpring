@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: dev
+
+  datasource:
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://localhost:3306/dev?characterEncoding=utf8mb4&serverTimezone=UTC&autoReconnect=true&useSSL=false
+    username: test
+    password: 1111
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: create
+      naming:
+        physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+    properties:
+      hibernate:
+        format_sql: true
+    open-in-view: false
+
+
+
+logging:
+  level:
+    root: info
+
+server:
+  port: 80
+  error:
+    path: /error
